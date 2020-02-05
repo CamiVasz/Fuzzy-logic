@@ -161,7 +161,14 @@ In the Figure~\ref{fig:mem} are shown the respective membership functions for ea
 \end{itemize}
 
 \section{Results}
-The rule base was implemented using a Mamdani and the aggregation method max min. Additionally, three methods of deffuzification methods (Center of gravity, lambda cut and differential centroid) and two T-norms used for the activation of the rules (Minimum and product) with their respective S-rule (Maximum and sum - product). The implementation was made on Python using the module scikit-fuzzy.
+The rule base was implemented using a Mamdani and the aggregation method max min. Additionally, three methods of deffuzification methods (Center of gravity, lambda cut and differential centroid) and two T-norms used for the activation of the rules (Minimum and product) with their respective S-rule (Maximum and sum - product). The implementation was made on Python using the module scikit-fuzzy. \\
+
+Then, three test cases were evaluated:
+\begin{itemize}
+    \item A healthy person, medium age, with good heritage. (Age: 20, Habits: 7, Heritage: 8)
+    \item A non-healthy young person with poor heritage. (habits = 4 age = 10 heritage = 3)
+    \item A healthy old person with poor heritage. (habits = 10 age = 75 heritage = 3)
+\end{itemize}
 
 \section{Conclusions}
 
