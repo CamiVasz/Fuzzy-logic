@@ -130,37 +130,38 @@ In the Figure~\ref{fig:mem} are shown the respective membership functions for ea
 \end{figure*}
 
 \subsection{Rule base}
-\begin{enumerate}
-\item [Habits Poor] and [Heritage Poor] and [Age Low] then [Risk Medium]
-\item [Habits Poor] and [Heritage Poor] and [Age Medium] then [Risk Medium]
-\item [Habits Poor] and [Heritage Poor] and [Age High] then [Risk High]
-\item [Habits Poor] and [Heritage Medium] and [Age Low] then [Risk Low]
-\item [Habits Poor] and [Heritage Medium] and [Age Medium] then [Risk Medium]
-\item [Habits Poor] and [Heritage Medium] and [Age High] then [Risk High]
-\item [Habits Poor] and [Heritage High] and [Age Low] then [Risk Low]
-\item [Habits Poor] and [Heritage High] and [Age Medium] then [Risk Low]
-\item [Habits Poor] and [Heritage High] and [Age High] then [Risk Medium]
-\item [Habits Medium] and [Heritage Poor] and [Age Low] then [Risk Medium]
-\item [Habits Medium] and [Heritage Poor] and [Age Medium] then [Risk High]
-\item [Habits Medium] and [Heritage Poor] and [Age High] then [Risk High]
-\item [Habits Medium] and [Heritage Medium] and [Age Low] then [Risk Low]
-\item [Habits Medium] and [Heritage Medium] and [Age Medium] then [Risk Medium]
-\item [Habits Medium] and [Heritage Medium] and [Age High] then [Risk High]
-\item [Habits Medium] and [Heritage High] and [Age Low] then [Risk Low]
-\item [Habits Medium] and [Heritage High] and [Age Medium] then [Risk Low]
-\item [Habits Medium] and [Heritage High] and [Age High] then [Risk Medium]
-\item [Habits High] and [Heritage Poor] and [Age Low] then [Risk Medium]
-\item [Habits High] and [Heritage Poor] and [Age Medium] then [Risk Medium]
-\item [Habits High] and [Heritage Poor] and [Age High] then [Risk Medium]
-\item [Habits High] and [Heritage Medium] and [Age Low] then [Risk Low]
-\item [Habits High] and [Heritage Medium] and [Age Medium] then [Risk Low]
-\item [Habits High] and [Heritage Medium] and [Age High] then [Risk Medium]
-\item [Habits High] and [Heritage High] and [Age Low] then [Risk Low]
-\item [Habits High] and [Heritage High] and [Age Medium] then [Risk Low]
-\item [Habits High] and [Heritage High] and [Age High] then [Risk Low]
-\end{enumerate}
+\begin{itemize}
+\item If [$u_1$ Poor] and [$u_2$ Poor] and [$u_3$ Low] then [$y$ Medium]
+\item If [$u_1$ Poor] and [$u_2$ Poor] and [$u_3$ Medium] then [$y$ Medium]
+\item If [$u_1$ Poor] and [$u_2$ Poor] and [$u_3$ High] then [$y$ High]
+\item If [$u_1$ Poor] and [$u_2$ Medium] and [$u_3$ Low] then [$y$ Low]
+\item If [$u_1$ Poor] and [$u_2$ Medium] and [$u_3$ Medium] then [$y$ Medium]
+\item If [$u_1$ Poor] and [$u_2$ Medium] and [$u_3$ High] then [$y$ High]
+\item If [$u_1$ Poor] and [$u_2$ High] and [$u_3$ Low] then [$y$ Low]
+\item If [$u_1$ Poor] and [$u_2$ High] and [$u_3$ Medium] then [$y$ Low]
+\item If [$u_1$ Poor] and [$u_2$ High] and [$u_3$ High] then [$y$ Medium]
+\item If [$u_1$ Medium] and [$u_2$ Poor] and [$u_3$ Low] then [$y$ Medium]
+\item If [$u_1$ Medium] and [$u_2$ Poor] and [$u_3$ Medium] then [$y$ High]
+\item If [$u_1$ Medium] and [$u_2$ Poor] and [$u_3$ High] then [$y$ High]
+\item If [$u_1$ Medium] and [$u_2$ Medium] and [$u_3$ Low] then [$y$ Low]
+\item If [$u_1$ Medium] and [$u_2$ Medium] and [$u_3$ Medium] then [$y$ Medium]
+\item If [$u_1$ Medium] and [$u_2$ Medium] and [$u_3$ High] then [$y$ High]
+\item If [$u_1$ Medium] and [$u_2$ High] and [$u_3$ Low] then [$y$ Low]
+\item If [$u_1$ Medium] and [$u_2$ High] and [$u_3$ Medium] then [$y$ Low]
+\item If [$u_1$ Medium] and [$u_2$ High] and [$u_3$ High] then [$y$ Medium]
+\item If [$u_1$ High] and [$u_2$ Poor] and [$u_3$ Low] then [$y$ Medium]
+\item If [$u_1$ High] and [$u_2$ Poor] and [$u_3$ Medium] then [$y$ Medium]
+\item If [$u_1$ High] and [$u_2$ Poor] and [$u_3$ High] then [$y$ Medium]
+\item If [$u_1$ High] and [$u_2$ Medium] and [$u_3$ Low] then [$y$ Low]
+\item If [$u_1$ High] and [$u_2$ Medium] and [$u_3$ Medium] then [$y$ Low]
+\item If [$u_1$ High] and [$u_2$ Medium] and [$u_3$ High] then [$y$ Medium]
+\item If [$u_1$ High] and [$u_2$ High] and [$u_3$ Low] then [$y$ Low]
+\item If [$u_1$ High] and [$u_2$ High] and [$u_3$ Medium] then [$y$ Low]
+\item If [$u_1$ High] and [$u_2$ High] and [$u_3$ High] then [$y$ Low]
+\end{itemize}
 
 \section{Results}
+The rule base was implemented using a Mamdani and the aggregation method max min. Additionally, three methods of deffuzification methods (Center of gravity, lambda cut and differential centroid) and two T-norms used for the activation of the rules (Minimum and product) with their respective S-rule (Maximum and sum - product). The implementation was made on Python using the module scikit-fuzzy.
 
 \section{Conclusions}
 
