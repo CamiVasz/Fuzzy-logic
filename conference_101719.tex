@@ -24,8 +24,7 @@ mvasqu49@eafit.edu.co}
 \maketitle
 
 \begin{abstract}
-A significant number of people pass away due to limited medical resources for the battle with cancer. Fatal cases can be reduced by using the computational techniques in the medical and health system. If the cancer is diagnosed early, the chance of successful treatment increases. In
-In this article is presented a model of fuzzy inference in cancer risk, with three variables of support: habits, heritage and age. The model is tested in various scenarios with different methods for logical operations and defuzzification. 
+In this article is presented a model of fuzzy inference in cancer risk, with three variables of support: habits, heritage and age. The model is tested in various scenarios with different methods for logical operations and defuzzification.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -33,15 +32,69 @@ Fuzzy, Inference, FIS, cancer, risk.
 \end{IEEEkeywords}
 
 \section{Introduction}
-Cancer is the leading life-threatening disease for people in today’s world. Although cancer formation is different and doctors often cannot explain why one person develops cancer and another does not, research shows that certain risk factors increase the chance that a person will develop cancer \cite{COGGON20051434}. Cancer prevention through consequent screening programs, early discovery and timely, improved and diversified means of treatment are usually the most successful ways to reduce mortality. 
+Cancer is the leading life-threatening disease for people in today’s world. Although cancer formation is different and doctors often cannot explain why one person develops cancer and another does not, research shows that certain risk factors increase the chance that a person will develop cancer \cite{COGGON20051434}. Cancer prevention through consequent screening programs, early discovery and timely, improved and diversified means of treatment are usually the most successful ways to reduce mortality. \\
+
 Where uncertainty exists such as in the medical
 field, fuzzy logic could play an important role in making decisions. Fuzzy logic is the science of reasoning, thinking, and inference that recognizes and uses the real world phenomenon that every- thing is a matter of degree. In the simplest terms, fuzzy logic theory is an extension of binary theory that does not use crisp definitions and distinctions.
 Instead of assuming everything must be
-defined crisply into black and white (binary view), fuzzy logic is a method that captures and uses the concept of fuzziness in a computationally effective manner \cite{Zadeh1996}. 
+defined crisply into black and white (binary view), fuzzy logic is a method that captures and uses the concept of fuzziness in a computationally effective manner \cite{Zadeh1996}. \\
+
+The objective of this work is to design and implement a fuzzy inference model and to analyze its results in predicting the risk of cancer in several cases. We suppose then that three variables are somehow enough to describe a possibility of developing cancer and we test the model in different scenarios.
+
+The rest of the paper is organized as follows: first, there is a review of the current work regarding the topic. Second, there is an explanation of the methodology that is going to be used. Then the results of the model are presented and finally some conclusions are derived from the work.
 
 \section{Literature review}
+Many authors have addressed the problem of an early diagnose of cancer using fuzzy models that incorporate characteristics of the patients. And altough these models share a common core, they are very different and approach the problem from different perspectives. \\
+
+Most of the existing models try to model the risk of developing cancer in a specific organ. Such models include: breast cancer (\cite{Balanica2011}, \cite{Buyukavcu2016},
+\cite{Gayathri2016},
+\cite{Khezri2014},
+\cite{Latha2013},
+\cite{Papageorgiou2015},
+\cite{Shleeg2013},
+\cite{Subramanian2015},
+\cite{Tatari2012},
+\cite{Yilmaz2011}), prostate cancer (\cite{Benecchi2006},
+\cite{Cosma2016}), oral cancer (\cite{Dom2012}), gastric cancer (\cite{Safdari2018}), colon cancer (\cite{Brand2006}) and lung cancer (\cite{Ylmaz2016}). However, there exists some other models that try to asses the risk of developing any kind of cancer, such as \cite{Atnccedil2012} and \cite{Dudek2012}. \\
+
+They vary also in the type of fuzzy model that is being used. Most of them are a fuzzy inference model of type Mandani (\cite{Balanica2011}, \cite{Dudek2012}, \cite{Brand2006}, \cite{Gayathri2016}, \cite{Khezri2014}, \cite{Latha2013}, \cite{Safdari2018},
+\cite{Yilmaz2011}) or Sugeno (\cite{Atnccedil2012},
+\cite{Shleeg2013}). Though neural fuzzy models (\cite{Benecchi2006},
+\cite{Dom2012},
+\cite{Cosma2016},
+\cite{Ylmaz2016}), fuzzy cognitive maps (\cite{Buyukavcu2016},
+\cite{Papageorgiou2015},
+\cite{Subramanian2015}) and fuzzy probabilistic models (\cite{Tatari2012}) have been used in this field. \\
+
+The way of modelling the characteristics of the patients is very similar in some models. They include hereditary characteristics, like the genetic history; lifestyle characteristics, such as the nutrition, the smoking habits, the body mass index and physical activity; biological factors like hormones, pre-existing tumors and cell conditions. Finally, they consider socio-demographic factors, such as age and gender. \\
+
+In this work we aim to use three of the main groups of characteristics, socio-demographic, lifestyle and hereditary, to propose a Mandani fuzzy inference model for predicting the risk of developing any type of cancer.
 
 \section{Methodology}
+The model used to carry out this work is described in detail below:
+\subsection{Variables}
+\begin{itemize}
+  \item $u_1$: Quality of the habits (lifestyle).
+  \item $u_2$: Quality of the genetic heritage. A good genetic heritage implies rare or non history of cancer.
+  \item $u_3$: Age of the person.
+  \item $y$: Risk of developing cancer.
+\end{itemize}
+\subsection{Speech Universe}
+\begin{itemize}
+  \item $u_1 \in \mathbb{Z} \cap [0,10]$: Being 0 the worst habits and 10 the best.
+  \item $u_2  \in \mathbb{Z} \cap [0,10]$: Being 0 the worst heritage and 10 the best.
+  \item $u_3  \in \mathbb{Z} \cap [0,90]$.
+  \item $y  \in \mathbb{R} \cap [0,100]$.
+\end{itemize}
+\subsection{Linguistic categories}
+\begin{itemize}
+  \item $u_1$: Poor, medium and high quality.
+  \item $u_2$: Poor, medium and high quality.
+  \item $u_3$: Young, medium and old.
+  \item $y$: High, medium and low.
+\end{itemize}
+\subsection{Membership functions}
+\subsection{Rule base}
 
 \section{Results}
 
