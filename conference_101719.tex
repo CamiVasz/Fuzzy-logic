@@ -44,7 +44,7 @@ The objective of this work is to design and implement a fuzzy inference model an
 The rest of the paper is organized as follows: first, there is a review of the current work regarding the topic. Second, there is an explanation of the methodology that is going to be used. Then the results of the model are presented and finally some conclusions are derived from the work.
 
 \section{Literature review}
-Many authors have addressed the problem of an early diagnose of cancer using fuzzy models that incorporate characteristics of the patients. And altough these models share a common core, they are very different and approach the problem from different perspectives. \\
+Many authors have addressed the problem of an early diagnose of cancer using fuzzy models that incorporate characteristics of the patients. And although these models share a common core, they are very different and approach the problem from different perspectives. \\
 
 Most of the existing models try to model the risk of developing cancer in a specific organ. Such models include: breast cancer (\cite{Balanica2011}, \cite{Buyukavcu2016},
 \cite{Gayathri2016},
@@ -93,8 +93,44 @@ The model used to carry out this work is described in detail below:
   \item $u_3$: Young, medium and old.
   \item $y$: High, medium and low.
 \end{itemize}
+
 \subsection{Membership functions}
+In the Figure~\ref{fig:mem} are shown the respective membership functions for each one of the linguistic categories. They are defined as:
+\begin{itemize}
+    \item $u_1$:
+    \begin{itemize}
+        \item \textit{Poor}: $trapezoid(x;0,0,2,4)$
+        \item \textit{Medium}: $gauss(x;5,1)$
+        \item \textit{High}: $trapezoid(x;6,8,10,10)$
+    \end{itemize}
+    \item $u_2$:
+    \begin{itemize}
+        \item \textit{Poor}: $sigmoid(x;3,-2.64)$
+        \item \textit{Medium}: $gauss(x;5,1)$
+        \item \textit{Low}: $sigmoid(x;7,2.64)$
+    \end{itemize}
+    \item $u_3$:
+    \begin{itemize}
+        \item \textit{Poor}: $sigmoid(x;30,-0.53)$
+        \item \textit{Medium}: $gauss(x;50,15.\bar{33})$
+        \item \textit{Low}: $sigmoid(x;70,0.264)$
+    \end{itemize}
+    \item $y$:
+    \begin{itemize}
+        \item \textit{Poor}: $sigmoid(x;30,-0.264)$
+        \item \textit{Medium}: $gauss(x;50,10)$
+        \item \textit{Low}: $sigmoid(x;70,0.264)$
+    \end{itemize}
+\end{itemize}
+\begin{figure*}[t!]
+    \centering
+    \includegraphics[scale = 0.6]{figures/mem.PNG}
+    \caption{Membership functions}
+    \label{fig:mem}
+\end{figure*}
+
 \subsection{Rule base}
+
 
 \section{Results}
 
