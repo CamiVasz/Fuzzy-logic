@@ -162,296 +162,32 @@ In the Figure~\ref{fig:mem} are shown the respective membership functions for ea
 \end{itemize}
 
 \section{Results}
-The rule base was implemented using a Mamdani and the aggregation method max min. Additionally, three methods of deffuzification methods (Center of gravity, lambda cut and differential centroid) and two T-norms used for the activation of the rules (Minimum and product) with their respective S-rule (Maximum and sum - product). The implementation was made on Python using the module scikit-fuzzy. \\
+The rule base was implemented using a Mamdani and the aggregation method max min. Additionally, three methods of deffuzification methods (Centroid of the area, bisector of the area and mean of maximum) and two T-norms used for the activation of the rules (Minimum and product) with their respective S-rule (Maximum and sum - product). The implementation was made on Python using the module scikit-fuzzy. \\
 
-Then, three test cases were evaluated:
+\subsection{Response surfaces}
+In this section, are described and shown some of the response surfaces of the model. 
+\subsection{Test cases}
+Then, three test cases were evaluated with each one of the T-norms and the defuzzification methods:
 \begin{itemize}
-    \item A healthy person, medium age, with good heritage. (Age: 20, Habits: 7, Heritage: 8)
+    \item A healthy person, medium age, with good heritage. (habits = 7, age = 20, heritage = 8)
     \item A non-healthy young person with poor heritage. (habits = 4 age = 10 heritage = 3)
     \item A healthy old person with poor heritage. (habits = 10 age = 75 heritage = 3)
 \end{itemize}
 
-\subsection{Test case 1}
-\begin{figure*}[ht]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include first image
-  \includegraphics[width=.8\linewidth]{figures/first/min1.png}  
-  \caption{Output for decision rule 16 with the T-norm minimum.}
-  \label{fig:1min1}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/min2.png}  
-  \caption{Output for decision rule 17 with the T-norm minimum.}
-  \label{fig:1min2}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/min3.png}  
-  \caption{Output for decision rule 25 with the T-norm minimum.}
-  \label{fig:1min3}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/min-centroid.png}  
-  \caption{Final aggregation result with the centroid method for defuzzification.}
-  \label{fig:1min-centroid}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/min-mom.png}  
-  \caption{Final aggregation result with the mean of maximum method for defuzzification.}
-  \label{fig:1min-mom}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/min-bisector.png}  
-  \caption{Final aggregation result with the bisector method for defuzzification.}
-  \label{fig:1min-bisector}
-\end{subfigure}
-\caption{Results for test case 1 using the T-norm minimum.}
-\label{fig:testcase1min}
-\end{figure*}
+\subsubsection{Test case 1}
+In the Figures~\ref{fig:testcase1min} and \ref{fig:testcase1prod} are shown the results for the first case, an ideal case, in which a person is not expected to develop cancer soon. The final risk of cancer is 15, 18 or 19, depending on the defuzzification method and the norm used. However, these values are not far apart from each other and indicate that the person is not in immediate danger, a reasonable conclusion taking into account the fact that they have healthy habits and a good genetic heritage. We see that, in this case, the minimum norm produces a higher output than the product norm, and the mean of maximum defuzzification method always produces the lowest output for the risk.
+\input{figure1}
 
-\begin{figure*}[ht]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include first image
-  \includegraphics[width=.8\linewidth]{figures/first/prod1.png}  
-  \caption{Output for decision rule 16 with the T-norm product.}
-  \label{fig:1prod1}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/prod2.png}  
-  \caption{Output for decision rule 17 with the T-norm product.}
-  \label{fig:1prod2}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/prod3.png}  
-  \caption{Output for decision rule 25 with the T-norm product.}
-  \label{fig:1prod3}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/prod-centroid.png}  
-  \caption{Final aggregation result with the centroid method for defuzzification.}
-  \label{fig:1prod-centroid}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/prod-mom.png}  
-  \caption{Final aggregation result with the mean of maximum method for defuzzification.}
-  \label{fig:1prod-mom}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/first/prod-bisector.png}  
-  \caption{Final aggregation result with the bisector method for defuzzification.}
-  \label{fig:1prod-bisector}
-\end{subfigure}
-\caption{Results for test case 1 using the T-norm product.}
-\label{fig:testcase1prod}
-\end{figure*}
+\subsubsection{Test case 2}
+In the Figures~\ref{fig:testcase2min} and \ref{fig:testcase2prod} are shown the results for the second test case, in which a person is really young but has a bad heritage, that is, maybe they have some history of cancer in the family. Also, they do not have really good habits. We can see that the model takes all into account and for different rules has medium, low or high risk, each one for their habits, age and genetic heritage. The final risk is 45, 47 or 50, depending on the defuzzification method, but they do not vary with the norm used for the rule base. In this case, the mean of maximum produces the highest output of the risk. This is a case in which we identify that, even though the habits and the heritage have a bad quality, the fact that the patient is really young makes the risk medium. One can argue that the intuitive probability of this happening is really low, but cases show that really young people can develop cancer due to genetic factors.
+\input{figure2}
 
-\subsection{Test case 2}
-\begin{figure*}[ht]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/min1.png}  
-  \caption{Output for decision rule 10 with the T-norm minimum.}
-  \label{fig:2min1}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/min2.png}  
-  \caption{Output for decision rule 11 with the T-norm minimum.}
-  \label{fig:2min2}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/min3.png}  
-  \caption{Output for decision rule 13 with the T-norm minimum.}
-  \label{fig:2min3}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/min-centroid.png}  
-  \caption{Final aggregation result with the centroid method for defuzzification.}
-  \label{fig:2min-centroid}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/min-mom.png}  
-  \caption{Final aggregation result with the mean of maximum method for defuzzification.}
-  \label{fig:2min-mom}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/min-bisector.png}  
-  \caption{Final aggregation result with the bisector method for defuzzification.}
-  \label{fig:2min-bisector}
-\end{subfigure}
-\caption{Results for test case 2 using the T-norm minimum.}
-\label{fig:testcase2min}
-\end{figure*}
-
-\begin{figure*}[ht]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/prod1.png}  
-  \caption{Output for decision rule 10 with the T-norm product.}
-  \label{fig:2prod1}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/prod2.png}  
-  \caption{Output for decision rule 13 with the T-norm product.}
-  \label{fig:2prod2}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/prod-centroid.png}  
-  \caption{Final aggregation result with the centroid method for defuzzification.}
-  \label{fig:2prod-centroid}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/prod-mom.png}  
-  \caption{Final aggregation result with the mean of maximum method for defuzzification.}
-  \label{fig:2prod-mom}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include second image
-  \includegraphics[width=.8\linewidth]{figures/second/prod-bisector.png}  
-  \caption{Final aggregation result with the bisector method for defuzzification.}
-  \label{fig:2prod-bisector}
-\end{subfigure}
-\caption{Results for test case 2 using the T-norm product.}
-\label{fig:testcase2prod}
-\end{figure*}
-
-\subsection{Test case 3}
-\begin{figure*}[ht]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/min1.png}  
-  \caption{Output for decision rule 20 with the T-norm minimum.}
-  \label{fig:3min1}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/min2.png}  
-  \caption{Output for decision rule 21 with the T-norm minimum.}
-  \label{fig:3min2}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/min3.png}  
-  \caption{Output for decision rule 23 with the T-norm minimum.}
-  \label{fig:3min3}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/min-centroid.png}  
-  \caption{Final aggregation result with the centroid method for defuzzification.}
-  \label{fig:3min-centroid}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/min-mom.png}  
-  \caption{Final aggregation result with the mean of maximum method for defuzzification.}
-  \label{fig:3min-mom}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/min-bisector.png}  
-  \caption{Final aggregation result with the bisector method for defuzzification.}
-  \label{fig:3min-bisector}
-\end{subfigure}
-\caption{Results for test case 3 using the T-norm minimum.}
-\label{fig:testcase3min}
-\end{figure*}
-
-\begin{figure*}[ht]
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/prod1.png}  
-  \caption{Output for decision rule 20 with the T-norm product.}
-  \label{fig:3prod1}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/prod2.png}  
-  \caption{Output for decision rule 23 with the T-norm product.}
-  \label{fig:3prod2}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/prod3.png}  
-  \caption{Output for decision rule 24 with the T-norm product.}
-  \label{fig:3prod3}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/prod-centroid.png}  
-  \caption{Final aggregation result with the centroid method for defuzzification.}
-  \label{fig:3prod-centroid}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/prod-mom.png}  
-  \caption{Final aggregation result with the mean of maximum method for defuzzification.}
-  \label{fig:3prod-mom}
-\end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  % include third image
-  \includegraphics[width=.8\linewidth]{figures/third/prod-bisector.png}  
-  \caption{Final aggregation result with the bisector method for defuzzification.}
-  \label{fig:3prod-bisector}
-\end{subfigure}
-\caption{Results for test case 3 using the T-norm product.}
-\label{fig:testcase3prod}
-\end{figure*}
+\subsubsection{Test case 3}
+In the Figures~\ref{fig:testcase3min} and \ref{fig:testcase3prod} are shown the results for the final test case. This patient has an advanced age, however, their habits are really good, and even when their heritage is not the best, the risk of developing cancer is medium, varying between 44 and 50. In this case, the mean of maximum defuzzification produces again the highest output, and the product norm is higher than the minimum norm. Here, we identify the fact that, for the model, the habits have the same importance as the heritage, and can compensate a high age and a bad heritage.
+\input{figure3}
 
 \section{Conclusions}
 
-\section*{References}
 
 \nocite{*}
 \bibliography{ref}
