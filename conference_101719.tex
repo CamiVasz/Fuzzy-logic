@@ -165,7 +165,12 @@ In the Figure~\ref{fig:mem} are shown the respective membership functions for ea
 The rule base was implemented using a Mamdani and the aggregation method max min. Additionally, three methods of deffuzification methods (Centroid of the area, bisector of the area and mean of maximum) and two T-norms used for the activation of the rules (Minimum and product) with their respective S-rule (Maximum and sum - product). The implementation was made on Python using the module scikit-fuzzy. \\
 
 \subsection{Response surfaces}
-In this section, are described and shown some of the response surfaces of the model. 
+In this section, are described and shown some of the response surfaces of the model. In Figure~\ref{fig:surfaces} are shown 9 response surfaces, each of them corresponding to the variation of two input variables and the fixed value of one of them, this last one being low, medium and high. \\
+
+In Figures~\ref{fig:sur1}-\ref{fig:sur3} are shown the results for the risk considering the heritage and the age, with fixed habits (low, medium and high). These three surfaces are very alike, which may be indicating that the habits do not play a decisive role in the rule base. Also, there is not an indication of a configuration that produces a high risk, only a medium one.\\ 
+
+In Figures~\ref{fig:sur4}-\ref{fig:sur6} are shown the surfaces for the risk of cancer considering the heritage and the habits, with fixed age (young, medium and old). Here we can see several variations of the surfaces, and the final risk reaches a higher value considering the age. In the young person, the risk is never above 50, in the medium a
+\input{surfaces}
 \subsection{Test cases}
 Then, three test cases were evaluated with each one of the T-norms and the defuzzification methods:
 \begin{itemize}
@@ -175,7 +180,7 @@ Then, three test cases were evaluated with each one of the T-norms and the defuz
 \end{itemize}
 
 \subsubsection{Test case 1}
-In the Figures~\ref{fig:testcase1min} and \ref{fig:testcase1prod} are shown the results for the first case, an ideal case, in which a person is not expected to develop cancer soon. The final risk of cancer is 15, 18 or 19, depending on the defuzzification method and the norm used. However, these values are not far apart from each other and indicate that the person is not in immediate danger, a reasonable conclusion taking into account the fact that they have healthy habits and a good genetic heritage. We see that, in this case, the minimum norm produces a higher output than the product norm, and the mean of maximum defuzzification method always produces the lowest output for the risk.
+In the Figures~\ref{fig:testcase1min} and \ref{fig:testcase1prod} are shown the results for the first case, an ideal case, in which a person is not expected to develop cancer soon. The final risk of cancer is 15, 18 or 19, depending on the defuzzification method and the norm used. However, these values are not far apart from each other and indicate that the person is not in immediate danger, a reasonable conclusion taking into account the fact that they have healthy habits and a good genetic heritage. We see that, in this case, the minimum norm produces a higher output than the product norm, and the mean of maximum defuzzification method always produces the lowest output for the risk. The results match the original assumption of a healthy person in no immediate danger holds.
 \input{figure1}
 
 \subsubsection{Test case 2}
@@ -183,7 +188,7 @@ In the Figures~\ref{fig:testcase2min} and \ref{fig:testcase2prod} are shown the 
 \input{figure2}
 
 \subsubsection{Test case 3}
-In the Figures~\ref{fig:testcase3min} and \ref{fig:testcase3prod} are shown the results for the final test case. This patient has an advanced age, however, their habits are really good, and even when their heritage is not the best, the risk of developing cancer is medium, varying between 44 and 50. In this case, the mean of maximum defuzzification produces again the highest output, and the product norm is higher than the minimum norm. Here, we identify the fact that, for the model, the habits have the same importance as the heritage, and can compensate a high age and a bad heritage.
+In the Figures~\ref{fig:testcase3min} and \ref{fig:testcase3prod} are shown the results for the final test case. This patient has an advanced age, however, their habits are really good, and even when their heritage is not the best, the risk of developing cancer is medium, varying between 44 and 50. In this case, the mean of maximum defuzzification produces again the highest output, and the product norm is higher than the minimum norm. Here, we identify the fact that, for the model, the habits have the same importance as the heritage, and can compensate a high age and a bad heritage. Also, the risk is medium, as one will expect from an old person having really healthy habits, that probably include frequent medical checks. 
 \input{figure3}
 
 \section{Conclusions}
